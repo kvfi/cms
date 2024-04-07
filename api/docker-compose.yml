@@ -1,0 +1,28 @@
+services:
+  web:
+    build: .
+    command: gunicorn cm.wsgi:application --bind 0.0.0.0:8000
+    ports:
+      - 4020:8000
+    environment:
+      DEBUG: 0
+      DJANGO_ALLOWED_HOSTS: localhost 127.0.0.1 [::1]
+      ALLOWED_HOSTS: http://localhost
+      ALLOWED_ORIGINS: http://localhost:3000
+      DB_MAIN_NAME: cm
+      DB_MAIN_USER: cm
+      DB_MAIN_PASSWORD: cm
+      DB_MAIN_HOST: db
+    depends_on:
+      - db
+  db:
+    container_name: content-manager-db
+    image: postgres:alpine3.19
+    environment:
+      POSTGRES_USER: cm
+      POSTGRES_PASSWORD: cm
+      POSTGRES_DB: cm
+    ports:
+      - "5982:5432"
+    volumes:
+      - ./.docker/database:/var/lib/postgresql/data
