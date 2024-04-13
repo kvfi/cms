@@ -1,0 +1,2 @@
+INSERT INTO public.django_session (session_key,session_data,expire_date) VALUES
+	 ('sl4dgufgjcuskq3leublc2e7b7gedc04','.eJxVjEEOwiAQRe_C2hCgg2Vcuu8ZyMwAtmpoUtqV8e7apAvd_vfef6lI2zrGreUlTkldlFWn341JHrnuIN2p3mYtc12XifWu6IM2PcwpP6-H-3cwUhu_dUgSEhTXmz643LErHiAwFCTfnclaxJyNY2MDMDKIoMe-EzCSPHlR7w_YLDer:1rqz6g:8ddav3vpFV64aLJG_sZHA1Wep2Bz6KRE7R30djUWaOc','2024-04-14 19:36:34.007015+02');
